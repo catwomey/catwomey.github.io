@@ -1,18 +1,11 @@
 <footer class="site-footer">
 
   <div class="wrapper">
+      <h2 class="footer-heading">Contact</h2>
+      <div class="footer-col-wrapper">
 
-    <h2 class="footer-heading">{{ site.title }}</h2>
 
-    <div class="footer-col-wrapper">
       <div class="footer-col  footer-col-1">
-        <ul class="contact-list">
-          <li>{{ site.title }}</li>
-          <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-col  footer-col-2">
         <ul class="social-media-list">
           {% if site.github_username %}
           <li>
@@ -42,12 +35,25 @@
             </a>
           </li>
           {% endif %}
+           <li>
+               <a href="http://ca.linkedin.com/pub/chester-twomey/30/95b/83" style="text-decoration:none;"><span style="font: 80% Arial,sans-serif; color:#0783B6;"><img src="https://static.licdn.com/scds/common/u/img/webpromo/btn_in_20x15.png" width="20" height="15" alt="View Chester Twomey's LinkedIn profile" style="vertical-align:middle;" border="0">&nbsp;Chester Twomey's profile</span></a>
+           </li>
         </ul>
       </div>
+        <div class="footer-col footer-col-2">
+            <!--dummy -->
+        </div>
 
-      <div class="footer-col  footer-col-3">
-        <p class="text">{{ site.description }}</p>
-      </div>
+        <div id="post-nav" class="footer-col footer-col-3">
+
+            {% if page.previous.url %}
+            <a class="prev" href="{{page.previous.url}}">&laquo; {{page.previous.title}}</a>
+            {% endif %}
+            {% if page.next.url %}
+            <a class="next" href="{{page.next.url}}">{{page.next.title}} &raquo;</a>
+            {% endif %}
+        </div>
+
     </div>
 
   </div>

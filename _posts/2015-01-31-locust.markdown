@@ -1,0 +1,53 @@
+---
+layout: post
+title:  "Performance testing with locust"
+date:   2015-01-31
+categories: performance test locust python
+---
+
+Simulating real user load on a system is a tough task to accomplish.  In the past i've used Jmeter and it's a great tool
+but i've found that its gui gets in the way sometimes. So I began my search for a tool that let me be productive 
+instead of encumbered.  What I've found was [locust].
+ 
+###Why Locust?
+Locust is a simple and flexible load testing tool written in python. Locust hooked me with it's hackability, all tests 
+are written in python allowing you to .  When i paired locust with [pyquery] I found that I
+could create a performance test suite that worked against dynamic sites. 
+
+###Simple Example
+For brevity I will omit the basics of locust since the [documentation] does such a good job
+
+```python
+
+from pyquery import PyQuery as pq
+from locust import HttpLocust, TaskSet
+
+class UserBehavior(TaskSet):
+    @task
+    def testDynamicflow(self):
+        loginResult = self.client.post("/login", {"username":"chester", "password":"supersecure"})
+        variableLength = pq(loginResult.text).find("#message")
+        if (variableLength):
+            self.client.post("/app/viewMessage", {"username":"chester"})
+
+class WebsiteUser(HttpLocust):
+    task_set = UserBehavior
+    min_wait=5000
+    max_wait=9000
+
+```
+
+In the above example I login to my app and use pyquery to inspect the returned html.  If a message element is present we 
+ call our restful api to view the message.  The example is simple but I hope that you can see how simple it would be to 
+ test an application that has multiple steps and branches.  At my current client a common work flow for a user is to login
+ and walk through a dynamic wizard based on their subscription information.  Using Jmeter would have been messy and painful
+ with locust I can write some simple python classes that are easily maintained and can react to my dynamic web applications
+ 
+ 
+ 
+
+
+
+[locust]:http://locust.io  
+[pyquery]:https://pythonhosted.org/pyquery/
+[documentation]:http://locust.io/en/latest/quickstart.html
