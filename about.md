@@ -6,6 +6,9 @@ permalink: /about/
 
 Hello I'm Chester,
 
-I'm a software developer with a passion for cool technologies and new ways to improve my workflow. This blog will be a record of useful tools, cool languages, and programming challenges I wish to share.
- 
-Any opinions expressed in this blog are solely my own and do not reflect any opinions of my current employer.  All code snippets I include on this site are free for anyone to use.
+I'm a software developer that loves problem solving, open source, and cutting edge technologies.  I created this blog to 
+capture things i've learned in hopes that it can help others in the same position. 
+
+I'm always open to feedback so please leave a comment on my posts.
+
+Happy Coding!

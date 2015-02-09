@@ -1,0 +1,45 @@
+---
+layout: post
+title:  "Dynamic Performance testing with locust and pyquery"
+date:   2015-02-08
+categories: performance test locust python pyquery
+---
+
+Recently my team and I were tasked with improving the performance of some new complex web applications.  Each web app
+had very speific flows that could change per user.  We needed some benchmark numbers, and attempted to use jmeter.  It
+sort of worked, but we found it lacking in some very specific scenarios.  That's when I discovered the wonderful world of
+[locust].
+
+###Why Locust?
+Locust is a simple and flexible load testing tool written in python. Locust hooked me with it's hackability, all tests 
+are written in python allowing you to define tests without entering a gui hell.  When I paired locust with [pyquery] I found that I
+could create a performance test suite that worked against dynamic sites.  The following is a simple example where if a user
+has a new message icon we make the rest call to retrieve it.
+
+```python
+
+from pyquery import PyQuery as pq
+from locust import HttpLocust, TaskSet
+
+class UserBehavior(TaskSet):
+    @task
+    def testDynamicflow(self):
+        loginResult = self.client.post("/login", {"username":"chester", "password":"supersecure"})
+        variableLength = pq(loginResult.text).find("#message")
+        if (variableLength):
+            self.client.post("/app/viewMessage", {"username":"chester"})
+
+class WebsiteUser(HttpLocust):
+    task_set = UserBehavior
+    min_wait=5000
+    max_wait=9000
+
+```
+
+The example is fairly simple, but extending test cases is incredibly simple and easy to maintain. I urge everyone to give
+locust io a shot.
+
+
+[locust]:http://locust.io  
+[pyquery]:https://pythonhosted.org/pyquery/
+[documentation]:http://locust.io/en/latest/quickstart.html
