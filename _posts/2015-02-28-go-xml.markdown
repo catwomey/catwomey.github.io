@@ -1,0 +1,74 @@
+---
+layout: post
+title:  "Marshalling XML in GOlang"
+date:   2015-02-28
+categories: golang xml 
+tags: xml golang golang
+---
+
+Lately i've been playing with google's [golang] and overall i'm fairly impressed with the language.  Things are simple and 
+ the native libraries seem to have almost everything you could want.  
+ 
+ To marshal/unmarshal xml in golang you need to import the encoding/xml package, and create [structs] that correspond to the xml 
+ you wish to consume.
+ 
+ Here is a simple example of the structs required to marshal/unmarshal xml from an atom feed:
+ 
+ ```go
+    
+type Entry struct {
+	Title     string `xml:"title"`
+	Link      string `xml:"link"`
+	Updated   string `xml:"updated"`
+	Published string `xml:"published"`
+	Category  string `xml:"category"`
+	Summary   string `xml:"summary"`
+}
+type Feed struct {
+	Title    string  `xml:"title"`
+	Subtitle string  `xml:"subtitle"`
+	Id       string  `xml:"id"`
+	Updated  string  `xml:"updated"`
+	Logo     string  `xml:"logo"`
+	Icon     string  `xml:"icon"`
+	Rights   string  `xml:"rights"`
+	Entries  []Entry `xml:"entry"`
+}
+ 
+```
+The feed struct represents the main atom feed.  You will notice that each field declaration has an exported(upper case) 
+ Identifier, a type, and a tag.  If the xml you are consuming can match your identifier you do not need to specify a tag.
+ The tag is a key value pair that tells the unmarshaller what to look for in your xml. 
+
+ With our strcuts defined marshalling the data is as easy as importing encoding/xml and using xml.Unmarshal using
+ your data, and structs as the parameters.
+ 
+ 
+ ```go
+func main() {
+	dat, err := ioutil.ReadFile("mb-38_e.xml")
+	if err != nil {
+		panic(err)
+	}
+
+	var f Feed
+	err2 := xml.Unmarshal(dat, &f)
+	if err2 != nil {
+		panic(err2)
+	}
+	fmt.Printf("Title: %q\n", f.Title)
+	fmt.Printf("Subtitle: %q\n", f.Subtitle)
+	fmt.Printf("Id: %q\n", f.Id)
+	fmt.Printf("Updated: %q\n", f.Updated)
+	fmt.Printf("Logo: %q\n", f.Logo)
+	fmt.Printf("Icon: %q\n", f.Icon)
+	fmt.Printf("Rights: %q\n", f.Rights)
+	fmt.Printf("Entries: %v\n", f.Entries)
+}
+ ```
+
+Full code can be found [here](https://gist.github.com/ctwomey1/6373d3b447cb15490d19)
+
+
+[golang]:https://golang.org
+[structs]:https://golang.org/ref/spec#Struct_types

@@ -2,7 +2,8 @@
 layout: post
 title:  "Dynamic Performance testing with locust and pyquery"
 date:   2015-02-08
-categories: performance test locust python pyquery
+categories: performance test locust 
+tags: python test locust performance
 ---
 
 Recently my team and I were tasked with improving the performance of some new complex web applications.  Each web app
@@ -36,8 +37,9 @@ class WebsiteUser(HttpLocust):
 
 ```
 
-The example is fairly simple, but extending test cases is incredibly simple and easy to maintain. I urge everyone to give
-locust io a shot.
+As you can see you pyquery is very similar to the popular jquery javascript library.  For the most part pyquery supports
+css selectors. The biggest caveat is if your site does client side rendering or manipulation you cannot use those elements 
+as part of your query.
 
 
 [locust]:http://locust.io  
