@@ -40,8 +40,8 @@ The feed struct represents the main atom feed.  You will notice that each field 
  Identifier, a type, and a tag.  If the xml you are consuming can match your identifier you do not need to specify a tag.
  The tag is a key value pair that tells the unmarshaller what to look for in your xml. 
 
- With our strcuts defined marshalling the data is as easy as importing encoding/xml and using xml.Unmarshal using
- your data, and structs as the parameters.
+ With our structs defined marshalling the data is as easy as importing encoding/xml and using xml.Unmarshal using
+ your data, and structs as the parameters. In the following example reading in an saved atom feed from environment canada and unmarshalling it into structs.
  
  
  ```go
