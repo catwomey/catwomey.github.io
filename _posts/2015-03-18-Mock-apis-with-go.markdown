@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Mocking web APIs so you can keep coding"
+title:  "Mocking web APIs for coding velocity"
 date:   2015-04-12
 categories: golang 
 tags: golang mockAPI
