@@ -7,7 +7,7 @@ tags: golang mockapi
 ---
 
 Creating mock apis seems to be something that is overlooked by even seasoned developers, but i've personally found this to be
-one of the best tools at my disposal.  At the end of this post i hope that i've inspired you to do it on your next project
+one of the best tools at my disposal.  At the end of this post I hope that i've inspired you to do it on your next project
 
 ##What is a mock api?
 
