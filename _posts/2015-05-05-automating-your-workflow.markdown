@@ -9,7 +9,7 @@ tags: powershell svn
 Recently I was tasked with ensuring that all of our projects where configured (in eclipse) to be utf-8 format. Why? 
   Eclipse by default uses your system encoding, developers are using windows(CP-1252) and our deployment server 
   is Linux (utf-8). So instead of troubleshooting every time a deployment crashes we are going to proactively force each project 
-   to use utf-8. My first instinct was that i'd be spending the day checking out every project, looking at the project properties
+   to use utf-8. My first instinct was that I'd be spending the day checking out every project, looking at the project properties
     and then running the unit tests.   As I was about to start my arduous task it hit me, I should script this.
     
     
