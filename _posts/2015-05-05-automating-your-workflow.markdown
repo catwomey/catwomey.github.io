@@ -3,7 +3,6 @@ layout: post
 title:  "You Should Script EVERYTHING"
 date:   2015-05-05
 categories: scripting
-published: false
 tags: powershell svn
 ---
 
