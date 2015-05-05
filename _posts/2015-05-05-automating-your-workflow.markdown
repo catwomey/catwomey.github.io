@@ -23,7 +23,7 @@ $projects="project1","project2","project3","project4","project5","project6"
 
 foreach($i in $projects)
 {
-    svn checkout http://<svnhost>/$i/trunk
+    svn checkout "http://<svnhost>/$i/trunk" "$pwd/$i"
 }
 ```
 
@@ -37,10 +37,10 @@ $projects="project1","project2","project3","project4","project5","project6"
 
 foreach($i in $projects)
 {
-    svn checkout http://<svnhost>/$i/trunk
-    if (! Test-Path "$pwd\$i\.settings\file")
+    svn checkout "http://<svnhost>/$i/trunk" "$pwd/$i"
+    if (!$(Test-Path "$pwd\$i\.settings\org.eclipse.core.resources.prefs"))
     {
-        cp C:\path\to\file $pwd\$i\.settings\file
+        cp "C:\path\to\.settings\org.eclipse.core.resources.prefs" "$pwd\$i\.settings\org.eclipse.core.resources.prefs"
     }
 }
 ```  
@@ -53,10 +53,10 @@ $projects="project1","project2","project3","project4","project5","project6"
 
 foreach($i in $projects)
 {
-    svn checkout http://<svnhost>/$i/trunk
-    if (! Test-Path "$pwd\$i\.settings\file")
+    svn checkout "http://<svnhost>/$i/trunk" "$pwd/$i"
+    if (!$(Test-Path "$pwd\$i\.settings\org.eclipse.core.resources.prefs"))
     {
-        cp C:\path\to\file $pwd\$i\.settings\file
+        cp "C:\path\to\.settings\org.eclipse.core.resources.prefs" "$pwd\$i\.settings\org.eclipse.core.resources.prefs"
     }
     ant -f $pwd\$i\build.xml test
 }
