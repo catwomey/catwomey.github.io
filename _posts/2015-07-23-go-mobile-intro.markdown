@@ -5,7 +5,7 @@ date:   2015-07-23
 tags: go mobile 
 ---
 
-With the upcoming release of go 1.5 the ability to compile go code to work on Android or iOS is being introduced.  You can either write your application completly in go with opengl for your ui, or write a go library that can interact with native android/iOS. This opens up the doors for cross platform libraries (business logic anyone?), which has me pretty excited.  Google has even done some of the legwork to make sure that apps written in go aren't rejected from the app store with [Ivy](https://itunes.apple.com/us/app/ivy-big-number-calculator/id1012116478?mt=8).
+With the upcoming release of go 1.5 the ability to compile go code to work on Android or iOS is being introduced.  You can either write your application completely in go with opengl for your ui, or write a go library that can interact with native android/iOS. This opens up the doors for cross platform libraries (business logic anyone?), which has me pretty excited.  Google has even done some of the legwork to make sure that apps written in go aren't rejected from the app store with [Ivy](https://itunes.apple.com/us/app/ivy-big-number-calculator/id1012116478?mt=8).
 
 In this post I will go over the very basic setup to compile and install a go app in Android, and briefly explain what's going on.
 
@@ -28,7 +28,7 @@ For iOS: Unfortunately iOS support isn't 100% ready for prime time and may not w
 
 ##Installing an example
 
-Let's see if we can compile and install some go code. Google has provided some [examples](https://godoc.org/golang.org/x/mobile/example) we can use. For the sake of simplicity i'm only going to talk about installing to android from here. (mostly because I don't have an iOS device to try)
+Let's see if we can compile and install some go code. Google has provided some [examples](https://godoc.org/golang.org/x/mobile/example) we can use. For the sake of simplicity I'm only going to talk about installing to android from here. (mostly because I don't have an iOS device to try)
 
 The following commands will install the sample applications
 
@@ -42,7 +42,7 @@ Might not seem like much, but I thought it was pretty cool. The above applicatio
 
 ##Anatomy of cross platform apps
 
-Ok so we can compile other people's code, but what is it doing? Let's take a look at what's happening in the basic example.
+OK so we can compile other people's code, but what is it doing? Let's take a look at what's happening in the basic example.
 
 ```go
 //excerpt from golang.org/x/mobile/example/basic
@@ -72,7 +72,7 @@ func main() {
 }
 ```
 
-Apps written in go are expected to call the Main function from the app package.  From there you can define what certain events should do, check the [event documentation](https://godoc.org/golang.org/x/mobile/event) for indepth details.  These events fire based on registered event interface{} in the app. 
+Apps written in go are expected to call the Main function from the app package.  From there you can define what certain events should do, check the [event documentation](https://godoc.org/golang.org/x/mobile/event) for in depth details.  These events fire based on registered event interface{} in the app. 
 
 The above code is looping through all events that come in on the event channel. The config event defines the size of the screen, the paint event is cycling the colour of our triangle.  The touch event changes the position of the triangle, and the lifecycle event constructs or destructs the program based on application focus.
 
