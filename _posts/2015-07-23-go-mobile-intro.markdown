@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "See Android Go! Go, Android, Go!"
+title:  "See Android Go! Go, Android. Go!"
 date:   2015-07-23
 tags: go mobile 
 ---
