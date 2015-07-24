@@ -9,7 +9,7 @@ With the upcoming release of go 1.5 the ability to compile go code to work on an
 
 ##Getting started
 
-Let's get started, first you need to have a working go 1.5 install.  You can compile it from [source](https://golang.org/doc/install/source) or [pre compiled](https://golang.org/dl/).  I used go 1.5 beta2 while writing this blog post on a Linux machine.  I noticed some warnings about things not working in Windows so if you are using windows for development this may not work. 
+Let's get started, first you need to have a working go 1.5 install.  You can compile it from [source](https://golang.org/doc/install/source) or use the [pre compiled version](https://golang.org/dl/).  I used go 1.5 beta2 while writing this blog post on a Linux machine.  I noticed some warnings about things not working in Windows so if you are using windows for development this may not work. 
 
 Once you have a working go install you need to install the gomobile command by running:
 
@@ -26,9 +26,9 @@ For IOS: Unfortunately IOS support isn't 100% ready for prime time and may not w
 
 ##Installing an example
 
-Before we get to writing code, let's make sure we can compile some example code. Google has provided some [examples](https://godoc.org/golang.org/x/mobile/example) we can use. For the sake of simplicity i'm only going to talk about installing to android from here. (mostly because I don't have an ios device to try)
+Let's see if we can compile and install some go code. Google has provided some [examples](https://godoc.org/golang.org/x/mobile/example) we can use. For the sake of simplicity i'm only going to talk about installing to android from here. (mostly because I don't have an ios device to try)
 
-Assuming you installed everything correctly the following commands should compile and install some sample applications.
+The following commands will install the sample applications
 
 ```
  gomobile install golang.org/x/mobile/example/basic
@@ -40,12 +40,44 @@ Might not seem like much, but I thought it was pretty cool. The above applicatio
 
 ##Anatomy of cross platform apps
 
-Ok so we can compile other people's code, but how do we create an app for ourselves?  Let's take a look at what's happening in the basic example. To 
+Ok so we can compile other people's code, but what is it doing? Let's take a look at what's happening in the basic example.
 
-https://godoc.org/golang.org/x/mobile/app use this package to write go apps useable on both platforms.  caveate limited to apis on all platforms
+```go
+//excerpt from golang.org/x/mobile/example/basic
+func main() {
+	app.Main(func(a app.App) {
+		var c config.Event
+		for e := range a.Events() {
+			switch e := app.Filter(e).(type) {
+			case lifecycle.Event:
+				switch e.Crosses(lifecycle.StageVisible) {
+				case lifecycle.CrossOn:
+					onStart()
+				case lifecycle.CrossOff:
+					onStop()
+				}
+			case config.Event:
+				c = e
+				touchLoc = geom.Point{c.Width / 2, c.Height / 2}
+			case paint.Event:
+				onPaint(c)
+				a.EndPaint()
+			case touch.Event:
+				touchLoc = e.Loc
+			}
+		}
+	})
+}
+```
 
+Apps written in go are expected to call the Main function from the app package.  From there you can define what certain events should do, check the [event documentation](https://godoc.org/golang.org/x/mobile/event) for indepth details.  These events fire based on registered event interface{} in the app. 
 
-Writing cross platform libraries
+The above code is looping through all events that come in on the event channel. The config event defines the size of the screen, the paint event is cycling the colour of our triangle.  The touch event changes the position of the triangle, and the lifecycle event constructs or destructs the program based on application focus.
 
+##Further reading
 
-https://godoc.org/golang.org/x/mobile/cmd/gobind
+I hope I have piqued your interest, to take go mobile further check out these links
+
+All the examples can be found [http://golang.org/x/mobile/example](http://golang.org/x/mobile/example) <br/>
+Documentation can be found [https://godoc.org/golang.org/x/mobile](https://godoc.org/golang.org/x/mobile) <br/>
+Source can be found [https://github.com/golang/mobile](https://github.com/golang/mobile)
