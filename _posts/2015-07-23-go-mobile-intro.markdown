@@ -5,7 +5,7 @@ date:   2015-07-23
 tags: go mobile 
 ---
 
-With the upcoming release of go 1.5 the ability to compile go code to work on Android or iOS is being introduced.  You can either write your application completely in go with opengl for your ui, or write a go library that can interact with native android/iOS. This opens up the doors for cross platform libraries (business logic anyone?), which has me pretty excited.  Google has even done some of the legwork to make sure that apps written in go aren't rejected from the app store with [Ivy](https://itunes.apple.com/us/app/ivy-big-number-calculator/id1012116478?mt=8).
+Using the [gomobile tool chain](https://godoc.org/golang.org/x/mobile) and go 1.5 you can compile go code to work on Android and iOS. You can either write your application completely in go with opengl for your ui, or write a go library that can interact with native android/iOS. This opens up the doors for cross platform libraries (business logic anyone?), which has me pretty excited.  Google has even done some of the legwork to make sure that apps written in go aren't rejected from the app store with [Ivy](https://itunes.apple.com/us/app/ivy-big-number-calculator/id1012116478?mt=8).
 
 In this post I will go over the very basic setup to compile and install a go app in Android, and briefly explain what's going on.
 
