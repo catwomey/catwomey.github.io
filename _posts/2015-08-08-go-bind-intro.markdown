@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Go libraries for iOS and Android"
+title:  "Go Libraries for iOS and Android"
 date:   2015-08-08
 tags: go mobile 
 ---
