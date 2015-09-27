@@ -39,7 +39,7 @@ which produces 5817fa4b2252afdb02e11e8b9dc1d9173ef3bd5a.  That hash matches the 
 
 ##Audit Source
 
-I've left this section to last because it's the least reasonable thing you can do for software safety.  Auditing source can give you peace of mind IF you know what to look for.  The majority of people, even developers, won't be able to see the truly sneaky things happening unless they gain intimate knowledge of the entire code base.  That being said, source open to the scrutiny of the public can be harder to compromise.
+I've left this section to last because it's the least reasonable thing you can do for software safety.  Auditing source can give you peace of mind IF you know what to look for.  The majority of people, even developers, won't be able to see the truly sneaky things happening unless they gain intimate knowledge of the entire code base.  That being said, source open to the scrutiny of the public can be harder to compromise than closed source.
 
 ##Weak Hat
 
