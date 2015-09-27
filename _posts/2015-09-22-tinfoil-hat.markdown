@@ -2,7 +2,7 @@
 layout: post
 title:  "Keeping Your Users Safe With Tinfoil Hats"
 subtitle: "keeping your tools secure"
-date:   2015-09-20
+date:   2015-09-27
 tags: security 
 ---
 
