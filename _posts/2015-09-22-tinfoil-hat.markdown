@@ -6,7 +6,7 @@ date:   2015-09-27
 tags: security 
 ---
 
-Recently a large number of apps were compromised in the app store.  It's believed that an infected version of xcode([xcodeghost]) was used to develop the applications which compromised them when they were compiled. Shipping compromised code is irresponsible and a good way to lose users trust, and potentially lose them as customers forever. So let's put on our [tinfoil hats] and talk about how we can be responsible developers.
+Recently a large number of apps were compromised in the Apple App store.  It's believed that an infected version of xcode([xcodeghost]) was used to develop the applications which compromised them when they were compiled. Shipping compromised code is irresponsible and a good way to lose users trust, and potentially lose them as customers forever. So let's put on our [tinfoil hats] and talk about how we can be responsible developers.
 
 ##Trusted Sources
 
