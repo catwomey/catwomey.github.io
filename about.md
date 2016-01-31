@@ -1,13 +1,10 @@
 ---
 layout: page
-title: About
+title: Chester Twomey
+subtitle: Automater of Things
 permalink: /about/
 ---
 
-Hello I'm Chester,
+I like to think of myself as a solver of problems and an automater of solutions.  I'm passionate about software development and love to learn new things.  This blog will capture some of the things I've learned or tried.
 
-I'm a software developer that loves problem solving, open source, and cutting edge technologies.  I created this blog to capture things I've learned in hopes that it can help others in the same position. 
-
-I'm always open to feedback so please leave a comment on my posts.
-
-Happy Coding!
+I'm very open to discussions, please feel free to reach out to me over twitter or the comment sections of my posts. 

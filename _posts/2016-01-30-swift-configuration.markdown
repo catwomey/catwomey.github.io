@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Swifty Configuration for iOS"
-subtitle: ""
+subtitle: "Codifying your Configuration"
 date:   2016-01-30
 tags: ios
 ---
