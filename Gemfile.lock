@@ -85,7 +85,7 @@ GEM
       jekyll (~> 2.0)
     json (1.8.3)
     kramdown (1.5.0)
-    libv8 (3.16.14.11)
+    libv8 (3.16.14.13)
     liquid (2.6.2)
     listen (2.10.1)
       celluloid (~> 0.16.0)
@@ -130,6 +130,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  execjs
   github-pages
   therubyracer
+
+BUNDLED WITH
+   1.11.2

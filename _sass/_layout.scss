@@ -115,7 +115,7 @@
 }
 
 .footer-col {
-    
+
     margin-bottom: $spacing-unit / 2;
     padding-left: $spacing-unit / 2;
 }
@@ -134,7 +134,7 @@
 }
 
 .footer-col-3 {
-    float: right;
+    float: left;
     text-align: right;
     width: -webkit-calc(33% - (#{$spacing-unit} / 2));
     width:         calc(33% - (#{$spacing-unit} / 2));
@@ -156,6 +156,7 @@
 @include media-query($on-palm) {
     .footer-col {
         float: none;
+        text-align: center;
         width: -webkit-calc(100% - (#{$spacing-unit} / 2));
         width:         calc(100% - (#{$spacing-unit} / 2));
     }
