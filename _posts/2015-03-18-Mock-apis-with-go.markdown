@@ -9,11 +9,11 @@ tags: golang mockAPI
 Creating mock APIs seems to be something that is overlooked by even seasoned developers, but i've personally found this to be
 one of the best tools at my disposal.  At the end of this post I hope that i've inspired you to do it on your next project
 
-##What is a mock API?
+## What is a mock API?
 
 A mock web API, is simply a standalone program that mimics the behavior of your real web API, but returns hardcoded responses.
 
-##Why should you mock an API?
+## Why should you mock an API?
 
 * Mock APIs can be a replacement for an API that is still in development
 
@@ -29,7 +29,7 @@ A mock web API, is simply a standalone program that mimics the behavior of your 
     Regardless of the technology stack you are currently working in, no one will care how you test your application. So
     use this time to learn something new and explore a new technology.
 
-##OK you convinced me, now show me!
+## OK you convinced me, now show me!
 
 The simplest form of a mock API (in go) is:
 

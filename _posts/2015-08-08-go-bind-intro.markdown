@@ -7,13 +7,13 @@ tags: go mobile
 
 In my last post I introduced you to gomobile and how you can build a go/opengl application for deployment on iOS and Android. Today I will show you how easy it is to create a cross platform library based in go.  For the examples in this post I am assuming you have a working go 1.5 environment as defined in my [previous post]({{page.previous.url}}).
 
-##Why go?
+## Why go?
 
 It's fairly likely that if you are creating any non-trivial app you are already using libraries to supplement your code.  If you are targeting multiple platforms it's likely that you've had to find/write libraries for both platforms, so why not bring it down to 1 library written in go? Potential library use cases I can think of are REST clients, and business logic code.
 
 Personally I find that writing go code is more enjoyable and less verbose than writing Java for Android. I don't have much exposure to objective-c however.
 
-##Show me how
+## Show me how
 
 First let's start with a really simple go program. I've written a [sudo random number generator](https://github.com/ctwomey1/CrossPlatformLib) seeded with the current second using the default golang libraries.
 
@@ -58,11 +58,11 @@ public class HelloActivity extends AppCompatActivity {
 }
 ~~~
 
-##How does it work?
+## How does it work?
 
 For Android the gomobile command generates [jni bindings](http://developer.android.com/training/articles/perf-jni.html) and a shared object file (.so) so the two can interact.  For iOS gomobile generates a shared archive file (.a) that can be imported in objective c code.
 
-##Gotchas
+## Gotchas
 
 Currently the exported function return types are limited to a [small number of types](https://godoc.org/golang.org/x/mobile/cmd/gobind#hdr-Type_restrictions) but should be expanded on in the future.
 
@@ -70,5 +70,5 @@ iOS support is still a work in progress, so in reality this isn't quite ready fo
 
 
 
-###Further reading
+### Further reading
 [https://godoc.org/golang.org/x/mobile/cmd/gobind](https://godoc.org/golang.org/x/mobile/cmd/gobind)

@@ -2,7 +2,7 @@
 layout: post
 title:  "Dynamic Performance testing with locust and pyquery"
 date:   2015-02-08
-categories: performance test locust 
+categories: performance test locust
 tags: python test locust performance
 ---
 
@@ -11,8 +11,8 @@ had very speific flows that could change per user.  We needed some benchmark num
 sort of worked, but we found it lacking in some very specific scenarios.  That's when I discovered the wonderful world of
 [locust].
 
-###Why Locust?
-Locust is a simple and flexible load testing tool written in python. Locust hooked me with it's hackability, all tests 
+### Why Locust?
+Locust is a simple and flexible load testing tool written in python. Locust hooked me with it's hackability, all tests
 are written in python allowing you to define tests without entering a gui hell.  When I paired locust with [pyquery] I found that I
 could create a performance test suite that worked against dynamic sites.  The following is a simple example where if a user
 has a new message icon we make the rest call to retrieve it.
@@ -38,7 +38,7 @@ class WebsiteUser(HttpLocust):
 ~~~
 
 As you can see you pyquery is very similar to the popular jquery javascript library.  For the most part pyquery supports
-css selectors. The biggest caveat is if your site does client side rendering or manipulation you cannot use those elements 
+css selectors. The biggest caveat is if your site does client side rendering or manipulation you cannot use those elements
 as part of your query.
 
 
