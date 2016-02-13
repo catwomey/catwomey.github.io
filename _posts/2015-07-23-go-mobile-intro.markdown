@@ -15,11 +15,11 @@ Let's get started, first you need to have a working go 1.5 install.  You can com
 
 Once you have a working go install, you need to install the gomobile command by running:
 
-~~~
+```
  go get golang.org/x/mobile/cmd/gomobile
  gomobile init
 
-~~~
+```
 
 For Android: you need to install the Android [sdk](https://developer.android.com/sdk/installing/index.html?pkg=tools) and ensure that adb is on your path and that usb debugging is enabled on your device.
 
@@ -32,11 +32,11 @@ Let's see if we can compile and install some go code. Google has provided some [
 
 The following commands will install the sample applications
 
-~~~
+```
  gomobile install golang.org/x/mobile/example/basic
  gomobile install golang.org/x/mobile/example/audio
  gomobile install golang.org/x/mobile/example/sprite
-~~~
+```
 
 Might not seem like much, but I thought it was pretty cool. The above applications are pure go and are using opengl for display.  Currently the apis are somewhat restricted but I expect this will improve as go matures.
 
@@ -44,7 +44,7 @@ Might not seem like much, but I thought it was pretty cool. The above applicatio
 
 OK so we can compile other people's code, but what is it doing? Let's take a look at what's happening in the basic example.
 
-~~~go
+``` go
 //excerpt from golang.org/x/mobile/example/basic
 func main() {
 	app.Main(func(a app.App) {
@@ -70,7 +70,7 @@ func main() {
 		}
 	})
 }
-~~~
+```
 
 Apps written in go are expected to call the Main function from the app package.  From there you can define what certain events should do, check the [event documentation](https://godoc.org/golang.org/x/mobile/event) for in depth details.  These events fire based on registered event interface{} in the app.
 

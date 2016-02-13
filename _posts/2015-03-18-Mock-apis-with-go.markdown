@@ -34,7 +34,7 @@ A mock web API, is simply a standalone program that mimics the behavior of your 
 The simplest form of a mock API (in go) is:
 
 
-~~~go
+``` go
 package main
 
 import (
@@ -53,7 +53,7 @@ func main() {
 		fmt.Println(err)
 	}
 }
-~~~
+```
  Pretty easy eh?  Now this example isn't exactly powerful, and chances are the reason you are using an API is it's doing
  some non trivial operation.  But let's step back and examine this code for a second, in a matter of a few minutes we configured
  an http server that returns any text we want, that's pretty powerful stuff.  
@@ -63,7 +63,7 @@ func main() {
 
  For the sake of context lets say our API identifies the properties of an object based on the string we send in
 
-~~~go
+``` go
 
 package main
 
@@ -106,7 +106,7 @@ func main() {
 	logError("main", err)
 
 }
-~~~
+```
 
 As you can see the response function now looks at the thing parameter and writes out the contents of a file named the same
 as thing in the current directory.  Keep in mind this isn't production ready code, just a stub to code against.

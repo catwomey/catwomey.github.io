@@ -14,7 +14,7 @@ Lately i've been playing with google's [golang] and overall i'm fairly impressed
 
  Here is a simple example of the structs required to marshal/unmarshal xml from an atom feed:
 
-~~~go
+``` go
 
 type Entry struct {
 	Title     string `xml:"title"`
@@ -34,7 +34,7 @@ type Feed struct {
 	Rights   string  `xml:"rights"`
 	Entries  []Entry `xml:"entry"`
 }
-~~~
+```
 The feed struct represents the main atom feed.  You will notice that each field declaration has an exported(upper case)
  Identifier, a type, and a tag.  If the xml you are consuming can match your identifier you do not need to specify a tag.
  The tag is a key value pair that tells the unmarshaller what to look for in your xml.
@@ -43,7 +43,7 @@ The feed struct represents the main atom feed.  You will notice that each field 
  your data, and structs as the parameters. In the following example reading in an saved atom feed from environment canada and unmarshalling it into structs.
 
 
-~~~go
+``` go
 func main() {
 	dat, err := ioutil.ReadFile("mb-38_e.xml")
 	if err != nil {
@@ -64,7 +64,7 @@ func main() {
 	fmt.Printf("Rights: %q\n", f.Rights)
 	fmt.Printf("Entries: %v\n", f.Entries)
 }
-~~~
+```
 
 Full code can be found [here](https://gist.github.com/ctwomey1/6373d3b447cb15490d19)
 

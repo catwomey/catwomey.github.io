@@ -18,22 +18,22 @@ The recent hack in the Apple App Store came from compromised xCode installs, mor
 
 To check your install with gatekeeper manually run:
 
-~~~
+```
 spctl --assess --verbose /Applications/Xcode.app
-~~~
+```
 
 If your application is legitimate the output will be something like:
 
-~~~
+```
 /Applications/Xcode.app: accepted
 source=Mac App Store
-~~~
+```
 
 Gatekeeper is Apple specific, if you find yourself on a Linux or Windows machine you can use SHA1 hash to verify the software you installed. For example on my Fedora install I can run:
 
-~~~
+```
 sha1sum ~/Downloads/go1.5.linux-amd64.tar.gz
-~~~
+```
 
 which produces 5817fa4b2252afdb02e11e8b9dc1d9173ef3bd5a.  That hash matches the one Google publishes on their [go download] page so I know my go install was not compromised or corrupted during download.
 

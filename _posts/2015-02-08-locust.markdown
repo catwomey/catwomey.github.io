@@ -17,7 +17,7 @@ are written in python allowing you to define tests without entering a gui hell. 
 could create a performance test suite that worked against dynamic sites.  The following is a simple example where if a user
 has a new message icon we make the rest call to retrieve it.
 
-~~~python
+``` python
 
 from pyquery import PyQuery as pq
 from locust import HttpLocust, TaskSet
@@ -35,7 +35,7 @@ class WebsiteUser(HttpLocust):
     min_wait=5000
     max_wait=9000
 
-~~~
+```
 
 As you can see you pyquery is very similar to the popular jquery javascript library.  For the most part pyquery supports
 css selectors. The biggest caveat is if your site does client side rendering or manipulation you cannot use those elements
