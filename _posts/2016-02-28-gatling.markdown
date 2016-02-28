@@ -1,0 +1,21 @@
+---
+layout: post
+title:  "Performance Testing"
+subtitle: "Breaking your code before your users do"
+date:   2016-02-28
+tags: performance
+---
+
+During my time at [Protegra](http://www.protegra.com) I've had the opportunity to find and correct performance problems for client and internal applications.   I used various tools such as [Jmeter](https://jmeter.apache.org), [Locust](http://locust.io), and even had the misfortune of seeing IBM’s [Rational Performance Tester](http://www-03.ibm.com/software/products/en/performance) in action.  Shortly before [The Local Frequency](http://www.thelocalfrequency.com) went live I was able to try out [Gatling](http://gatling.io/).  Gatling quickly became my preference out of the 4.
+
+### Some highlights of why I prefer Gatling:
+- Actor based model(uses [akka](http://akka.io)), so your testing machine doesn’t need to be big and expensive
+- Supports distributed testing
+- Simple [DSL](https://en.wikipedia.org/wiki/Domain-specific_language) that makes writing tests quite easy (no cumbersome GUI)
+- Scala based, so if you need to do something extra complex you can write some native code
+- Can be integrated into build process easily with maven or sbt. Can also be run stand alone
+- Great charts to show performance break downs
+
+My previous favourite was [Locust]({% post_url 2015-02-08-locust%}).  I still think Locust is a great product, but it lacks integrations and charting.  Additionally I tend to work in Java at work so Gatling is a cleaner fit.
+
+The next time you need to load test your applications give Gatling a shot, you won't be disappointed.
