@@ -1,0 +1,35 @@
+---
+layout: post
+title:  "Gatling"
+subtitle: "My new favorite way to break things"
+date:   2016-03-01
+tags: performance
+---
+
+Just over a year ago I wrote about a performance testing tool called [Locust]({% post_url 2015-02-08-locust%}).  It helped me quickly replicate high load on key areas of a client's webapp. It was a simple solution to a complex problem, but in hindsight [Gatling](http://gatling.io/) would have been a more desirable solution. In today's post I'm going to walk you through the reasons Gatling won me over.
+
+### Clean and Simple Reporting
+
+Locust provided very simple reports that included your min/max/mean/etc in a a simple table.  This is great if you are just trying to get some quick feedback for yourself, but as soon as you want to share with a wider audience it becomes hard for people to parse.  The Gatling team has created rich [html reports](http://gatling.io/docs/2.1.7/general/reports.html) that give you easy to read graphs and a shareable artifact.
+
+### Simple DSL
+
+Well designed [DSL's](https://en.wikipedia.org/wiki/Domain-specific_language) can make a tool extremely productive.  So far I've found that the Gatling DSL is intuitive,  especially with their convenient [cheat sheet](http://gatling.io/#/cheat-sheet/2.1.7).  
+
+Locust lacked any real DSL and instead was focused on being pure python.  Which honestly was a curse and a blessing.  It meant for any team member to be productive they needed to be somewhat fluent in python.  Gatling is built in Scala, and while you can extend your tests with Scala or Java code, it is very easy to get by with just the DSL.
+
+### Actor Based model
+
+Both products use an actor based model (instead of a thread bound model), however Gatling seemed to be slightly better than Locust.  Gatling uses [akka](http://akka.io) and the JVM.  Locust uses gevent, and at the time when started on Windows Loucst warned about potential performance problems and recommended Linux.  Additionally Locust required a master/slave setup to consolidate results, but Gatling allows you to run each independent and compile the results from each run log.  All things considered I prefer Gatling's approach to distributed testing.
+
+### Approach to Test data
+
+Out of the box Gatling provides several different Data feeders that can take test data from files(csv), or datastores (redis, or database) with various fetching strategies. With Locust you had to roll your own solution, which is fine assuming you are comfortable in the python ecosystem.
+
+### Build Tool Integration
+
+Gatling provides plugins to work with maven and sbt.  I found this greatly reduces the amont of setup other team members need to go through to run performance testing scripts.  It also conveniently removes the excuse of "I didn't know how" since it can be enforced as part of the build.  However if you don't work with Java this won't help you.
+
+### Conclusion
+
+I found Gatling to be a great addition to my tool box. The next time you need to load test your applications give Gatling a shot, you won't be disappointed.
