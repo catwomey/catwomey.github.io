@@ -18,13 +18,13 @@ Well designed [DSL's](https://en.wikipedia.org/wiki/Domain-specific_language) ca
 
 Locust lacked any real DSL and instead was focused on being pure python.  Which honestly was a curse and a blessing.  It meant for any team member to be productive they needed to be somewhat fluent in python.  Gatling is built in Scala, and while you can extend your tests with Scala or Java code, it is very easy to get by with just the DSL.
 
-### Actor Based model
+### Actor Based Model
 
 Both products use an actor based model (instead of a thread bound model), however Gatling seemed to be slightly better than Locust.  Gatling uses [akka](http://akka.io) and the JVM.  Locust uses [gevent](http://www.gevent.org/) and python, and at the time Loucst warned about potential performance problems when started on Windows and recommended Linux.  Additionally Locust required a master/slave setup to consolidate results, but Gatling allows you to run each independent and compile the results from each run log.  All things considered I prefer Gatling's approach to distributed testing.
 
-### Approach to Test data
+### Approach to Test Data
 
-Out of the box Gatling provides several different Data feeders that can take test data from files(csv), or datastores (redis, or database) with various fetching strategies. With Locust you had to roll your own solution, which is fine assuming you are comfortable in the python ecosystem.
+Out of the box Gatling provides several different Data feeders that can take test data from files(csv), or datastores (redis, or database) with various fetching strategies. With Locust you had to roll your own solution, which is fine assuming you are comfortable in the python ecosystem. Gatling providing a default way to inject test data into your performance test was a nice quality of life improvement.
 
 ### Build Tool Integration
 
