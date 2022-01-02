@@ -17,7 +17,7 @@ Personally I find that writing go code is more enjoyable and less verbose than w
 
 First let's start with a really simple go program. I've written a [sudo random number generator](https://github.com/ctwomey1/CrossPlatformLib) seeded with the current second using the default golang libraries.
 
-``` go
+```go
 package random
 
 import (
@@ -35,7 +35,7 @@ Now I can run gomobile bind to generate an Android Archive (.aar) file, to gener
 
 Now create a program to use the go library. I've created a very simple [Android project](https://github.com/ctwomey1/HelloWorldGoLib) that displays the random number on create. The main activity using our go code is:
 
-``` java
+```java
 package com.codingvelocity.helloworldgolib;
 
 import android.support.v7.app.AppCompatActivity;

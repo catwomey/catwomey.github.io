@@ -44,7 +44,7 @@ Might not seem like much, but I thought it was pretty cool. The above applicatio
 
 OK so we can compile other people's code, but what is it doing? Let's take a look at what's happening in the basic example.
 
-``` go
+```go
 //excerpt from golang.org/x/mobile/example/basic
 func main() {
 	app.Main(func(a app.App) {
