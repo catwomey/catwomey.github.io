@@ -25,7 +25,7 @@ Now that we can get a solid hold on the environment we built for, we can create 
 
 Here's a sample of what I have created:
 
-``` swift
+```swift
 
 class MySwiftConfig {
 	static let sharedInstance = MySwiftConfig()

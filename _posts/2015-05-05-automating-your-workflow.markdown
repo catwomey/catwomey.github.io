@@ -17,7 +17,7 @@ Recently I was tasked with ensuring that all of our projects where configured (i
 Supplied with a list of projects, basic svn cli knowledge, and basic powershell knowledge I started with a very simple script.
 An array of strings to signify projects, and a for each loop. It looked like this:
 
-``` powershell
+```powershell
 $projects="project1","project2","project3","project4","project5","project6"
 
 foreach($i in $projects)
@@ -31,7 +31,7 @@ Awesome, I just saved me self at least a dozen mouse clicks. What if I could sav
   As it turns out, eclipse uses a specific project file in the .settings directory of each project.  So I added some logic
   to copy the file in the right place
 
-``` powershell
+```powershell
 $projects="project1","project2","project3","project4","project5","project6"
 
 foreach($i in $projects)
@@ -47,7 +47,7 @@ foreach($i in $projects)
 ### Running the tests
 Simple enough! But what about those pesky junit tests? o I know i'll just call the ant cli...
 
-``` powershell
+```powershell
 $projects="project1","project2","project3","project4","project5","project6"
 
 foreach($i in $projects)

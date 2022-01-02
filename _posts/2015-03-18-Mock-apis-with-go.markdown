@@ -34,7 +34,7 @@ A mock web API, is simply a standalone program that mimics the behavior of your 
 The simplest form of a mock API (in go) is:
 
 
-``` go
+```go
 package main
 
 import (
@@ -63,7 +63,7 @@ func main() {
 
  For the sake of context lets say our API identifies the properties of an object based on the string we send in
 
-``` go
+```go
 
 package main
 
