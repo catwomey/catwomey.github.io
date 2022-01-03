@@ -1,6 +1,6 @@
 name: Proofreading
 
-on: [push, pull_request]
+on: [push]
 
 jobs:
   spellchecking:
@@ -13,4 +13,4 @@ jobs:
         with:
           node-version: "16"
       - run: npm install -g cspell
-      - run: cspell --config ./cspell.json "**/*.md"
+      - run: cspell --config .cspell.json "**/*.md"
