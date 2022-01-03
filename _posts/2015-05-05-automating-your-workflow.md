@@ -61,7 +61,7 @@ foreach($i in $projects)
 }
 ```
 
-### Wooo i'm done time to go internet... err do more work!
+### Conclusion
 Now my script is complete.  It took me approximately 2 hours to research and write the script for a task that was going
 to take 3/4 of my day.  Not only that, but I also have a baseline script available to me and my peers the next time we need
 to do a bulk configuration change and that's the kind of gain that is invaluable.  So the next time you are facing some
